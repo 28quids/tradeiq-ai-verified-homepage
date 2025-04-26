@@ -105,6 +105,24 @@
     @apply bg-gradient-to-r from-blue-600 to-blue-500;
   }
 
+  .light a:not(.gradient-text),
+  .light button:not(.gradient-text),
+  .light p,
+  .light h1,
+  .light h2,
+  .light h3,
+  .light h4,
+  .light h5,
+  .light h6,
+  .light span:not(.gradient-text) {
+    @apply text-gray-900;
+  }
+
+  .light nav a,
+  .light nav button {
+    @apply text-navy hover:text-navy-light;
+  }
+
   .container {
     @apply px-4 md:px-6 lg:px-8;
   }
