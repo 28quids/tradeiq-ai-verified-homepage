@@ -145,6 +145,6 @@
   .glass-card {
     @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl
            dark:bg-white/5 dark:border-white/10
-           light:bg-navy-5 light:border-navy/10;
+           bg-navy-5;
   }
 }

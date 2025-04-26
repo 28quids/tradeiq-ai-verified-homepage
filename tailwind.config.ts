@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -125,11 +126,6 @@ export default {
         'ping-slow': 'ping-slow 3s ease-in-out infinite',
       }
     }
-  },
-  variants: {
-    extend: {
-      backgroundColor: ['light', 'dark'],
-    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
