@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -71,6 +70,7 @@ export default {
           DEFAULT: '#0A0F1C',
           light: '#121930',
           dark: '#05080F',
+          '5': 'rgba(10, 15, 28, 0.05)'
         },
         blue: {
           electric: '#0ADBFF',
@@ -125,6 +125,11 @@ export default {
         'ping-slow': 'ping-slow 3s ease-in-out infinite',
       }
     }
+  },
+  variants: {
+    extend: {
+      backgroundColor: ['light', 'dark'],
+    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

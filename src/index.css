@@ -146,3 +146,94 @@
     transition-delay: 500ms;
   }
 }
+```
+
+```text
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl
+           dark:bg-white/5 dark:border-white/10
+           light:bg-navy-5 light:border-navy/10;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter antialiased transition-colors duration-300;
+  }
+
+  body.dark {
+    @apply bg-navy;
+  }
+  
+  body.light {
+    @apply bg-white;
+  }
+
+  .container {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-electric to-blue-soft bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply bg-card border border-white/10 rounded-xl p-6
+           dark:bg-navy-light dark:border-white/10 
+           light:bg-white light:border-navy/10;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl
+           dark:bg-white/5 dark:border-white/10
+           light:bg-navy/5 light:border-navy/10;
+  }
+
+  /* Additional utility classes for animations */
+  .animate-reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .animate-reveal.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .animate-delay-100 {
+    transition-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    transition-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    transition-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    transition-delay: 400ms;
+  }
+  
+  .animate-delay-500 {
+    transition-delay: 500ms;
+  }
+}
