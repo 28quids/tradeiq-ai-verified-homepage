@@ -7,6 +7,39 @@
 
 @layer base {
   :root {
+    /* Light theme */
+    --background: 0 0% 100%;
+    --foreground: 220 33% 8%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 220 33% 8%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 220 33% 8%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 20% 98%;
+    --secondary-foreground: 215 27.9% 16.9%;
+
+    --muted: 210 20% 98%;
+    --muted-foreground: 215 10% 50%;
+
+    --accent: 210 20% 98%;
+    --accent-foreground: 215 27.9% 16.9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 215 27.9% 16.9%;
+
+    --radius: 0.5rem;
+  }
+  
+  .dark {
     --background: 220 33% 8%;
     --foreground: 0 0% 98%;
 
@@ -49,7 +82,15 @@
   }
   
   body {
-    @apply bg-navy text-foreground font-inter antialiased;
+    @apply bg-background text-foreground font-inter antialiased transition-colors duration-300;
+  }
+
+  body.dark {
+    @apply bg-navy;
+  }
+  
+  body.light {
+    @apply bg-white;
   }
 
   .container {
@@ -65,11 +106,15 @@
   }
 
   .card {
-    @apply bg-navy-light border border-white/10 rounded-xl p-6;
+    @apply bg-card border border-white/10 rounded-xl p-6
+           dark:bg-navy-light dark:border-white/10 
+           light:bg-white light:border-navy/10;
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl;
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl
+           dark:bg-white/5 dark:border-white/10
+           light:bg-navy/5 light:border-navy/10;
   }
 
   /* Additional utility classes for animations */
