@@ -1,4 +1,6 @@
 
+import { Twitter, Instagram, Discord } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="py-12 bg-navy-dark border-t border-white/5">
@@ -23,6 +25,30 @@ const Footer = () => {
               Login
             </a>
           </div>
+        </div>
+
+        <div className="flex justify-center gap-6 my-8">
+          <a 
+            href="#" 
+            className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+            aria-label="Twitter"
+          >
+            <Twitter className="w-6 h-6 text-white" />
+          </a>
+          <a 
+            href="#" 
+            className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-6 h-6 text-white" />
+          </a>
+          <a 
+            href="#" 
+            className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+            aria-label="Discord"
+          >
+            <Discord className="w-6 h-6 text-white" />
+          </a>
         </div>
         
         <div className="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
