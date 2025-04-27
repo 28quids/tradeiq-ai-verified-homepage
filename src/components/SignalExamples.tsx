@@ -2,8 +2,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { useMobile } from "@/hooks/use-mobile";
 
 const signals = [
   {
@@ -11,39 +9,36 @@ const signals = [
     asset: "Gold (XAU/USD)",
     reason: "Fundamentals align",
     details: "Strong support level at $1,850, bullish momentum confirmed by RSI and MACD. Inflation concerns driving safe-haven demand.",
-    chart: "up"
+    chart: "up" // For simplified chart display
   },
   {
     type: "buy",
     asset: "GBP/JPY",
     reason: "Breakout setup detected",
     details: "Clear breakout above 180.50 resistance with increasing volume. Bank of England hawkish stance versus Bank of Japan's continued easing.",
-    chart: "breakout"
+    chart: "breakout" // For simplified chart display
   },
   {
     type: "avoid",
     asset: "NASDAQ",
     reason: "Rangebound, no confirmation",
     details: "Trading within consolidation zone with decreasing volume. Multiple failed breakout attempts suggest waiting for clearer direction.",
-    chart: "range"
+    chart: "range" // For simplified chart display
   },
   {
     type: "avoid",
     asset: "EUR/GBP",
     reason: "Emotional entry risk",
     details: "Your previous trades show a pattern of entering counter-trend on this pair. Current setup doesn't align with your successful strategy.",
-    chart: "down"
+    chart: "down" // For simplified chart display
   }
 ];
 
 const SignalExamples = () => {
   const [expandedSignal, setExpandedSignal] = useState<number | null>(null);
-  const isMobile = useMobile();
   
   const toggleExpand = (index: number) => {
-    if (isMobile) {
-      setExpandedSignal(expandedSignal === index ? null : index);
-    }
+    setExpandedSignal(expandedSignal === index ? null : index);
   };
   
   return (
@@ -80,31 +75,14 @@ const SignalExamples = () => {
                   <p className="text-white/70">{signal.reason}</p>
                 </div>
                 
-                {isMobile ? (
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    onClick={() => toggleExpand(index)}
-                    className="text-white/50 hover:text-white hover:bg-white/5"
-                  >
-                    {expandedSignal === index ? "Hide" : "Why?"}
-                  </Button>
-                ) : (
-                  <HoverCard>
-                    <HoverCardTrigger asChild>
-                      <Button 
-                        variant="ghost" 
-                        size="sm"
-                        className="text-white/50 hover:text-white hover:bg-white/5"
-                      >
-                        Why?
-                      </Button>
-                    </HoverCardTrigger>
-                    <HoverCardContent className="bg-navy-dark border-white/10 text-white w-80">
-                      <p className="text-sm">{signal.details}</p>
-                    </HoverCardContent>
-                  </HoverCard>
-                )}
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => toggleExpand(index)}
+                  className="text-white/50 hover:text-white hover:bg-white/5"
+                >
+                  {expandedSignal === index ? "Hide" : "Why?"}
+                </Button>
               </div>
               
               {/* Mini chart visualization */}
@@ -144,8 +122,8 @@ const SignalExamples = () => {
                 )}
               </div>
               
-              {/* Mobile expanded details */}
-              {isMobile && expandedSignal === index && (
+              {/* Expanded details */}
+              {expandedSignal === index && (
                 <div className="mt-4 p-3 rounded bg-navy/50 text-sm animate-fade-in">
                   <p className="text-white/80">{signal.details}</p>
                 </div>
