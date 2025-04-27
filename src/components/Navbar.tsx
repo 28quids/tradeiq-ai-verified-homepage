@@ -1,47 +1,62 @@
 
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 type NavbarProps = {
-  isScrolled: boolean;
+  isScrolled?: boolean;
 };
 
 const Navbar = ({ isScrolled }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  const isActive = (path: string) => location.pathname === path;
   
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'py-3 bg-navy/80 backdrop-blur-md dark:bg-navy/80 light:bg-white/80' : 'py-5'
     }`}>
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <span className="text-xl font-bold text-white dark:text-white light:text-navy">
             Trade<span className="gradient-text">IQ</span>
           </span>
-        </a>
+        </Link>
         
         <div className="hidden md:flex items-center space-x-8">
           <div className="flex space-x-6">
-            <a href="#how" className="text-white/80 hover:text-white transition-colors dark:text-white/80 light:text-navy-light/80 dark:hover:text-white light:hover:text-navy">
-              How it Works
-            </a>
-            <a href="#signals" className="text-white/80 hover:text-white transition-colors dark:text-white/80 light:text-navy-light/80 dark:hover:text-white light:hover:text-navy">
-              Signal Examples
-            </a>
-            <a href="#pricing" className="text-white/80 hover:text-white transition-colors dark:text-white/80 light:text-navy-light/80 dark:hover:text-white light:hover:text-navy">
-              Pricing
-            </a>
+            <Link 
+              to="/features" 
+              className={`transition-colors ${isActive('/features') ? 'text-white' : 'text-white/80 hover:text-white'}`}
+            >
+              Features
+            </Link>
+            <Link 
+              to="/about"
+              className={`transition-colors ${isActive('/about') ? 'text-white' : 'text-white/80 hover:text-white'}`}
+            >
+              About
+            </Link>
+            <Link 
+              to="/plans"
+              className={`transition-colors ${isActive('/plans') ? 'text-white' : 'text-white/80 hover:text-white'}`}
+            >
+              Plans
+            </Link>
           </div>
           
           <div className="flex items-center space-x-2">
             <ThemeToggle />
-            <Button variant="outline" className="border-white/20 hover:bg-white/5 text-white dark:border-white/20 light:border-navy/20 dark:text-white light:text-navy">
+            <Button variant="outline" className="border-white/20 hover:bg-white/5 text-white">
               Login
             </Button>
-            <Button className="bg-blue-soft hover:bg-blue-electric text-white">
-              Join Waitlist
-            </Button>
+            <Link to="/waitlist">
+              <Button className="bg-blue-soft hover:bg-blue-electric text-white">
+                Join Waitlist
+              </Button>
+            </Link>
           </div>
         </div>
         
@@ -55,32 +70,21 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
         </button>
       </div>
       
-      {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-navy-light dark:bg-navy-light light:bg-white border-t border-white/10 dark:border-white/10 light:border-navy/10 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-navy-light dark:bg-navy-light light:bg-white border-t border-white/10">
           <div className="container mx-auto py-4 flex flex-col space-y-4">
-            <a href="#how" className="text-white/80 hover:text-white transition-colors dark:text-white/80 light:text-navy/80 py-2">
-              How it Works
-            </a>
-            <a href="#signals" className="text-white/80 hover:text-white transition-colors dark:text-white/80 light:text-navy/80 py-2">
-              Signal Examples
-            </a>
-            <a href="#pricing" className="text-white/80 hover:text-white transition-colors dark:text-white/80 light:text-navy/80 py-2">
-              Pricing
-            </a>
-            <div className="flex flex-col space-y-2 pt-2 border-t border-white/10 dark:border-white/10 light:border-navy/10">
-              <div className="flex items-center">
-                <Button variant="ghost" className="text-white dark:text-white light:text-navy w-full justify-start">
-                  <span className="mr-2"><ThemeToggle /></span> Toggle Theme
-                </Button>
-              </div>
-              <Button variant="outline" className="border-white/20 hover:bg-white/5 text-white dark:border-white/20 light:border-navy/20 dark:text-white light:text-navy w-full justify-center">
-                Login
-              </Button>
-              <Button className="bg-blue-soft hover:bg-blue-electric text-white w-full justify-center">
-                Join Waitlist
-              </Button>
-            </div>
+            <Link to="/features" className={`transition-colors ${isActive('/features') ? 'text-white' : 'text-white/80'}`}>
+              Features
+            </Link>
+            <Link to="/about" className={`transition-colors ${isActive('/about') ? 'text-white' : 'text-white/80'}`}>
+              About
+            </Link>
+            <Link to="/plans" className={`transition-colors ${isActive('/plans') ? 'text-white' : 'text-white/80'}`}>
+              Plans
+            </Link>
+            <Link to="/waitlist" className={`transition-colors ${isActive('/waitlist') ? 'text-white' : 'text-white/80'}`}>
+              Join Waitlist
+            </Link>
           </div>
         </div>
       )}
