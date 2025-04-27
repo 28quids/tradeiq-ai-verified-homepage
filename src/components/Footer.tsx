@@ -1,5 +1,4 @@
-
-import { Twitter, Instagram, Discord } from "lucide-react";
+import { FaTwitter, FaInstagram, FaDiscord } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -13,51 +12,58 @@ const Footer = () => {
               </span>
             </a>
           </div>
-          
+
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
-            <a href="#" className="text-white/70 hover:text-white transition-colors">
+            <a
+              href="#"
+              className="text-white/70 hover:text-white transition-colors"
+            >
               Support
             </a>
-            <a href="#" className="text-white/70 hover:text-white transition-colors">
+            <a
+              href="#"
+              className="text-white/70 hover:text-white transition-colors"
+            >
               Privacy
             </a>
-            <a href="#" className="text-white/70 hover:text-white transition-colors">
+            <a
+              href="#"
+              className="text-white/70 hover:text-white transition-colors"
+            >
               Login
             </a>
           </div>
         </div>
 
         <div className="flex justify-center gap-6 my-8">
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
             aria-label="Twitter"
           >
-            <Twitter className="w-6 h-6 text-white" />
+            <FaTwitter className="w-6 h-6 text-white" />
           </a>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
             aria-label="Instagram"
           >
-            <Instagram className="w-6 h-6 text-white" />
+            <FaInstagram className="w-6 h-6 text-white" />
           </a>
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
             aria-label="Discord"
           >
-            <Discord className="w-6 h-6 text-white" />
+            <FaDiscord className="w-6 h-6 text-white" />
           </a>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/50 text-sm mb-4 md:mb-0">
             © 2025 TradeIQ. All rights reserved.
           </p>
-          <p className="text-white/50 text-sm">
-            Email: support@tradeiqapp.com
-          </p>
+          <p className="text-white/50 text-sm">Email: support@tradeiqapp.com</p>
         </div>
       </div>
     </footer>
