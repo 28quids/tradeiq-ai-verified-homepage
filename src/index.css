@@ -83,76 +83,87 @@
   
   body {
     @apply bg-background text-foreground font-inter antialiased transition-colors duration-300;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 
-  body.dark {
-    @apply bg-navy text-white;
-  }
-  
-  body.light {
-    @apply bg-[#F9FAFB] text-gray-900;
-  }
-
-  .light .card {
-    @apply bg-white border-[#E5E7EB] shadow-sm hover:shadow-md transition-all duration-200;
-  }
-
-  .light .glass-card {
-    @apply bg-white/90 border-[#E5E7EB] backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-200;
+  :root {
+    --card-bg: #FFFFFF;
+    --card-border: #E5E7EB;
+    --btn-primary: #2563EB;
+    --btn-primary-hover: #1D4ED8;
+    --signal-buy: #059669;
+    --signal-avoid: #DC2626;
+    --nav-bg: #FFFFFF;
+    --nav-border: #E5E7EB;
+    --cta-bg: #F3F4F6;
+    --link-color: #2563EB;
+    --link-hover: #1D4ED8;
   }
 
-  .light .btn-primary {
-    @apply bg-[#2563EB] text-white hover:bg-[#1D4ED8] transition-colors duration-200;
+  .dark {
+    --card-bg: var(--navy-light);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --btn-primary: var(--blue-electric);
+    --btn-primary-hover: var(--blue-soft);
+    --signal-buy: #34D399;
+    --signal-avoid: #EF4444;
+    --nav-bg: var(--navy-dark);
+    --nav-border: rgba(255, 255, 255, 0.1);
+    --cta-bg: var(--navy);
+    --link-color: var(--blue-electric);
+    --link-hover: var(--blue-soft);
   }
 
-  .light .btn-secondary {
-    @apply bg-transparent text-[#2563EB] border-[#2563EB] hover:bg-[#2563EB]/5 transition-colors duration-200;
+  .card {
+    @apply border rounded-xl p-6 transition-all duration-200;
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
   }
 
-  .light .navbar {
-    @apply bg-white border-b border-[#E5E7EB] shadow-sm;
+  .glass-card {
+    @apply backdrop-blur-sm transition-all duration-200;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--card-border);
   }
 
-  .light .cta-section {
-    @apply bg-[#F3F4F6] text-gray-900;
+  .btn-primary {
+    background-color: var(--btn-primary);
+    color: white;
   }
 
-  .light .signal-card {
-    @apply bg-white border-[#E5E7EB] shadow-sm;
+  .btn-primary:hover {
+    background-color: var(--btn-primary-hover);
   }
 
-  .light .signal-buy {
-    @apply text-emerald-700;
+  .navbar {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
   }
 
-  .light .signal-avoid {
-    @apply text-red-700;
+  .cta-section {
+    background-color: var(--cta-bg);
   }
 
-  .light a:not(.btn-primary):not(.btn-secondary) {
-    @apply text-[#2563EB] hover:text-[#1D4ED8] transition-colors duration-200;
+  .signal-card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
   }
 
-  .light .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-blue-500;
+  .signal-buy {
+    color: var(--signal-buy);
   }
 
-  .light a:not(.gradient-text),
-  .light button:not(.gradient-text),
-  .light p,
-  .light h1,
-  .light h2,
-  .light h3,
-  .light h4,
-  .light h5,
-  .light h6,
-  .light span:not(.gradient-text) {
-    @apply text-gray-900;
+  .signal-avoid {
+    color: var(--signal-avoid);
   }
 
-  .light nav a,
-  .light nav button {
-    @apply text-navy hover:text-navy-light;
+  a:not(.btn-primary):not(.btn-secondary) {
+    color: var(--link-color);
+  }
+
+  a:not(.btn-primary):not(.btn-secondary):hover {
+    color: var(--link-hover);
   }
 
   .container {
