@@ -8,9 +8,9 @@ const benefits = [
     icon: "🛑",
   },
   {
-    title: "Stick to Your Edge",
+    title: "Trade Strategy Optimisation",
     description:
-      "Trade consistently with your proven strategies and strengths.",
+      "Improved entry models and exit strategies to maximise your efficiency in the markets.",
     icon: "📈",
   },
   {

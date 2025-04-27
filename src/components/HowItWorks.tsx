@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+import StepIcon from "./StepIcon";
 
 const steps = [
   {
@@ -7,30 +8,35 @@ const steps = [
     title: "Connect your trading platform",
     description:
       "Seamlessly integrate with your existing broker or trading account.",
+    icon: "connect",
   },
   {
     number: "02",
     title: "TradeIQ builds your behavioural profile",
     description:
-      "Our AI analyses your trading style from past and live trades as well as personality type and psychological profiling.",
+      "Our AI analyses your trading style from past and live trades as well as personality type and psychological profiling.",
+    icon: "profile",
   },
   {
     number: "03",
     title: "Market & fundamental data analysed 24/7",
     description:
       "Continuous monitoring of global markets, news events, and technical patterns.",
+    icon: "data",
   },
   {
     number: "04",
     title: "Trades filtered through multi-layer logic",
     description:
       "Potential opportunities are verified against your profile and market conditions.",
+    icon: "filter",
   },
   {
     number: "05",
     title: "You receive actionable alerts & coaching",
     description:
       "Get notified only when high-probability setups match your trading style.",
+    icon: "alerts",
   },
 ];
 
@@ -114,14 +120,13 @@ const HowItWorks = () => {
 
                 <div
                   className={cn(
-                    "hidden md:block w-full md:w-1/2",
+                    "hidden md:flex w-full md:w-1/2",
                     index % 2 === 0 ? "md:pl-12" : "md:pr-12",
+                    "items-center justify-center",
                   )}
                 >
-                  <div className="glass-card p-5 h-[180px] flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-blue-soft/20 flex items-center justify-center">
-                      <div className="w-4 h-4 rounded-full bg-blue-soft animate-ping-slow"></div>
-                    </div>
+                  <div className="glass-card p-5 h-[200px] w-full max-w-[300px] flex items-center justify-center relative overflow-hidden">
+                    <StepIcon type={step.icon} />
                   </div>
                 </div>
               </div>

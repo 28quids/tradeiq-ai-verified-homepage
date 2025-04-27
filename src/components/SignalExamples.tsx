@@ -6,17 +6,18 @@ const signals = [
   {
     type: "buy",
     asset: "Gold (XAU/USD)",
-    reason: "Fundamentals align",
+    reason:
+      "Fundamentals support continued uptrend (aligns with your strategy)",
     details:
-      "Strong support level at $1,850, bullish momentum confirmed by RSI and MACD. Inflation concerns driving safe-haven demand.",
+      "Central banks buying continues adding fuel to bull cycle fire on XAUUSD. COT data implies continued institutional long positions.",
     chart: "up", // For simplified chart display
   },
   {
     type: "buy",
-    asset: "GBP/JPY",
-    reason: "Breakout setup detected",
+    asset: "XXX/USD",
+    reason: "Lower time frame reversal -> Higher time frame continuation.",
     details:
-      "Clear breakout above 180.50 resistance with increasing volume. Bank of England hawkish stance versus Bank of Japan's continued easing.",
+      "Fundamentals support continued upside for majors, with 1h timeframe signifying LTF reversal and continuation of HTF trend.soundo thes",
     chart: "breakout", // For simplified chart display
   },
   {
@@ -96,48 +97,48 @@ const SignalExamples = () => {
               {/* Mini chart visualization */}
               <div className="h-20 bg-navy-light rounded-md mb-3 p-2 flex items-center justify-center">
                 {signal.chart === "up" && (
-                  <svg width="100" height="40" viewBox="0 0 100 40">
+                  <svg width="200" height="40" viewBox="0 0 200 40">
                     <path
-                      d="M0,30 C10,28 20,25 30,20 C40,15 50,10 60,8 C70,6 80,5 90,5 L100,5"
+                      d="M0,35 L30,25 L60,30 L90,20 L120,25 L150,15 L180,20 L200,10"
                       stroke={signal.type === "buy" ? "#1EAEDB" : "#FF4A6E"}
-                      strokeWidth="2"
+                      strokeWidth="3"
                       fill="none"
                     />
                   </svg>
                 )}
                 {signal.chart === "down" && (
-                  <svg width="100" height="40" viewBox="0 0 100 40">
+                  <svg width="200" height="40" viewBox="0 0 200 40">
                     <path
-                      d="M0,5 C10,7 20,10 30,15 C40,20 50,25 60,28 C70,30 80,32 90,35 L100,35"
+                      d="M0,5 L30,10 L60,8 L90,15 L120,12 L150,20 L180,25 L200,30"
                       stroke={signal.type === "buy" ? "#1EAEDB" : "#FF4A6E"}
-                      strokeWidth="2"
+                      strokeWidth="3"
                       fill="none"
                     />
                   </svg>
                 )}
                 {signal.chart === "range" && (
-                  <svg width="100" height="40" viewBox="0 0 100 40">
+                  <svg width="200" height="40" viewBox="0 0 200 40">
                     <path
-                      d="M0,20 C10,25 20,15 30,20 C40,25 50,15 60,20 C70,25 80,15 90,20 L100,20"
+                      d="M0,20 L30,25 L60,15 L90,25 L120,15 L150,25 L180,15 L200,20"
                       stroke={signal.type === "buy" ? "#1EAEDB" : "#FF4A6E"}
-                      strokeWidth="2"
+                      strokeWidth="3"
                       fill="none"
                     />
                   </svg>
                 )}
                 {signal.chart === "breakout" && (
-                  <svg width="100" height="40" viewBox="0 0 100 40">
+                  <svg width="200" height="40" viewBox="0 0 200 40">
                     <path
-                      d="M0,20 C10,20 20,20 30,20 C40,20 50,20 60,20 C70,20 75,5 85,5 L100,5"
+                      d="M0,30 L70,30 L90,25 L110,20 L140,10 L170,5 L200,0"
                       stroke={signal.type === "buy" ? "#1EAEDB" : "#FF4A6E"}
-                      strokeWidth="2"
+                      strokeWidth="3"
                       fill="none"
                     />
                     <line
                       x1="0"
-                      y1="20"
+                      y1="30"
                       x2="70"
-                      y2="20"
+                      y2="30"
                       stroke="#FFFFFF"
                       strokeWidth="1"
                       strokeOpacity="0.2"
