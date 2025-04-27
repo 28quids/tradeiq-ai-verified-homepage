@@ -44,9 +44,12 @@ const PersonalizationEngine = () => {
             {/* Profile Card */}
             <div className="w-full md:w-1/2 mb-10 md:mb-0 animate-reveal">
               <div className="glass-card p-8 relative max-w-md mx-auto">
-                <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-blue-soft/10 animate-ping-slow"></div>
                 <div className="text-center mb-6">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-electric to-blue-soft mx-auto mb-4 flex items-center justify-center">
+                  <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-blue-electric to-blue-soft mx-auto mb-4 flex items-center justify-center">
+                    {/* centred glow */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-24 h-24 rounded-full bg-blue-soft/10 animate-ping-slow"></div>
+                    </div>
                     <span className="text-2xl">👤</span>
                   </div>
                   <h3 className="text-xl font-bold">Trading Profile</h3>

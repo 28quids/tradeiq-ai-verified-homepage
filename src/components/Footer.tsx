@@ -1,4 +1,5 @@
-import { FaTwitter, FaInstagram, FaDiscord } from "react-icons/fa";
+import { FaInstagram, FaDiscord } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -37,14 +38,14 @@ const Footer = () => {
 
         <div className="flex justify-center gap-6 my-8">
           <a
-            href="#"
+            href="https://x.com/TradeIQ_App"
             className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
             aria-label="Twitter"
           >
-            <FaTwitter className="w-6 h-6 text-white" />
+            <FaXTwitter className="w-6 h-6 text-white" />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/tradeiq_app/"
             className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
             aria-label="Instagram"
           >
