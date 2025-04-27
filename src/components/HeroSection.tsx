@@ -41,29 +41,29 @@ const HeroSection = () => {
                 <div>
                   <h2 className="text-2xl font-semibold text-white mb-4">Trading Score</h2>
                   <p className="text-white/60 mb-4">Session Analysis</p>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/5 rounded-lg p-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/80">Entry Precision</span>
-                        <span className="text-cyan-400 font-bold text-2xl">94%</span>
+                  <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-4">
+                    <div className="bg-white/5 rounded-lg p-2 md:p-4">
+                      <div className="flex flex-row items-center justify-between space-x-2">
+                        <span className="text-white/80 text-sm md:text-base">Entry Precision</span>
+                        <span className="text-cyan-400 font-bold text-lg md:text-2xl whitespace-nowrap">94%</span>
                       </div>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/80">Risk Management</span>
-                        <span className="text-amber-400 font-bold text-2xl">61%</span>
+                    <div className="bg-white/5 rounded-lg p-2 md:p-4">
+                      <div className="flex flex-row items-center justify-between space-x-2">
+                        <span className="text-white/80 text-sm md:text-base">Risk Management</span>
+                        <span className="text-amber-400 font-bold text-lg md:text-2xl whitespace-nowrap">61%</span>
                       </div>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/80">Rule Following</span>
-                        <span className="text-green-400 font-bold text-2xl">82%</span>
+                    <div className="bg-white/5 rounded-lg p-2 md:p-4">
+                      <div className="flex flex-row items-center justify-between space-x-2">
+                        <span className="text-white/80 text-sm md:text-base">Rule Following</span>
+                        <span className="text-green-400 font-bold text-lg md:text-2xl whitespace-nowrap">82%</span>
                       </div>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white/80">Emotional State</span>
-                        <span className="text-amber-400 font-bold text-2xl">73%</span>
+                    <div className="bg-white/5 rounded-lg p-2 md:p-4">
+                      <div className="flex flex-row items-center justify-between space-x-2">
+                        <span className="text-white/80 text-sm md:text-base">Emotional State</span>
+                        <span className="text-amber-400 font-bold text-lg md:text-2xl whitespace-nowrap">73%</span>
                       </div>
                     </div>
                   </div>
