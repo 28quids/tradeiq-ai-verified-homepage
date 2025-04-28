@@ -101,8 +101,8 @@ const HowItWorks = () => {
                   className={cn(
                     "w-full md:w-1/2 flex",
                     index % 2 === 0
-                      ? "md:justify-end md:pr-12"
-                      : "md:justify-start md:pl-12",
+                      ? "md:justify-end md:pr-8 lg:pr-12"
+                      : "md:justify-start md:pl-8 lg:pl-12",
                   )}
                 >
                   <div className="flex flex-row md:flex-col items-start">
