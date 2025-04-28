@@ -17,43 +17,83 @@ const StepIcon = ({ type }: { type: string }) => {
   // Connection animation
   if (type === "connect") {
     return (
-      <div className="relative flex items-center justify-center w-full h-full overflow-hidden px-4">
-        {/* Left label + dot */}
-        <div className="flex items-center space-x-2">
-          <span className="text-white text-xs md:text-sm font-bold whitespace-nowrap">
-            TradeIQ
-          </span>
-          <div className="relative w-4 h-4 md:w-5 md:h-5">
-            <div className="w-full h-full rounded-full bg-blue-soft" />
-            <div className="absolute inset-0 rounded-full bg-blue-soft/30 animate-pulse-slow" />
-          </div>
-        </div>
-
-        {/* Connecting Line */}
-        <div className="relative flex-1 h-[2px] bg-blue-soft mx-2 overflow-visible">
-          <div className="absolute top-1/2 left-0 w-3 h-3 bg-white rounded-full animate-arrow-move -translate-y-1/2" />
-        </div>
-
-        {/* Right dot + broker name */}
-        <div className="flex items-center space-x-2">
-          <div className="relative w-4 h-4 md:w-5 md:h-5">
-            <div className="w-full h-full rounded-full bg-blue-soft" />
-            <div className="absolute inset-0 rounded-full bg-blue-soft/30 animate-pulse-slow" />
-          </div>
-          <div className="relative h-5 overflow-hidden text-blue-soft text-xs md:text-sm font-bold whitespace-nowrap">
-            <div
-              className="transition-transform duration-700 ease-in-out"
-              style={{ transform: `translateY(-${currentBroker * 1.25}rem)` }}
+      <svg viewBox="0 0 100 100" className="w-full h-full">
+        {/* Central connecting hub */}
+        <circle cx="50" cy="50" r="8" className="fill-blue-soft">
+          <animate
+            attributeName="r"
+            values="8;10;8"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        
+        {/* Orbiting nodes */}
+        {[0, 60, 120, 180, 240, 300].map((angle, i) => (
+          <g key={i} transform={`rotate(${angle}, 50, 50)`}>
+            <circle 
+              cx="50" 
+              cy="20" 
+              r="4" 
+              className="fill-blue-soft/60"
             >
-              {brokers.map((broker, index) => (
-                <div key={index} className="h-5 flex items-center justify-center">
-                  {broker}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from={`0 50 50`}
+                to={`360 50 50`}
+                dur={`${4 + i}s`}
+                repeatCount="indefinite"
+              />
+            </circle>
+            
+            {/* Connection lines */}
+            <line 
+              x1="50" 
+              y1="28" 
+              x2="50" 
+              y2="42" 
+              className="stroke-blue-soft/30" 
+              strokeWidth="1"
+            >
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from={`0 50 50`}
+                to={`360 50 50`}
+                dur={`${4 + i}s`}
+                repeatCount="indefinite"
+              />
+            </line>
+          </g>
+        ))}
+        
+        {/* Pulse effect */}
+        <circle cx="50" cy="50" r="20" className="fill-none stroke-blue-soft/20" strokeWidth="1">
+          <animate
+            attributeName="r"
+            values="20;35;20"
+            dur="3s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="stroke-opacity"
+            values="0.2;0;0.2"
+            dur="3s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        
+        {/* Broker text */}
+        <text 
+          x="50" 
+          y="85" 
+          className="text-[8px] fill-blue-soft font-bold text-center" 
+          textAnchor="middle"
+        >
+          {brokers[currentBroker]}
+        </text>
+      </svg>
     );
   }
 
