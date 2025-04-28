@@ -93,8 +93,8 @@ const HowItWorks = () => {
                 key={index}
                 ref={(el) => (stepsRef.current[index] = el)}
                 className={cn(
-                  "flex flex-col md:flex-row items-start animate-reveal",
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse",
+                  "flex flex-col items-start animate-reveal", // Always flex-col mobile
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse", // Only flip from md:
                 )}
               >
                 <div
@@ -106,9 +106,12 @@ const HowItWorks = () => {
                   )}
                 >
                   <div className="flex flex-row md:flex-col items-start">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-soft text-white font-bold z-20 mb-4 mr-4 md:mr-0">
-                      {step.number}
+                    <div className="flex items-center justify-center aspect-square w-12 rounded-full bg-blue-soft text-white font-bold leading-[1] text-center text-base md:text-lg z-20 mb-4 mr-4 md:mr-0">
+                      <span className="flex items-center justify-center">
+                        {step.number}
+                      </span>
                     </div>
+
                     <div>
                       <h3 className="text-xl md:text-2xl font-bold mb-2">
                         {step.title}
