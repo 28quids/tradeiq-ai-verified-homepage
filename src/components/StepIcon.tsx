@@ -87,10 +87,18 @@ const StepIcon = ({ type }: { type: string }) => {
         {/* Broker text */}
         <text 
           x="50" 
-          y="85" 
-          className="text-[8px] fill-blue-soft font-bold text-center" 
+          y="90" 
+          className="text-[8px] fill-blue-soft font-bold text-center transition-opacity duration-500 ease-in-out" 
           textAnchor="middle"
+          opacity={currentBroker === 0 ? "1" : "0"}
         >
+          <animate
+            attributeName="opacity"
+            values="0;1;1;0"
+            dur="1.5s"
+            begin="0s"
+            repeatCount="indefinite"
+          />
           {brokers[currentBroker]}
         </text>
       </svg>
