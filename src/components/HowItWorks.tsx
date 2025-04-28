@@ -93,8 +93,8 @@ const HowItWorks = () => {
                 key={index}
                 ref={(el) => (stepsRef.current[index] = el)}
                 className={cn(
-                  "flex flex-col items-start animate-reveal", // Always flex-col mobile
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse", // Only flip from md:
+                  "flex flex-col items-start gap-4 md:gap-8 animate-reveal",
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse",
                 )}
               >
                 <div
