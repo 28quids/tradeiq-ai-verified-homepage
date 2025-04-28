@@ -106,8 +106,8 @@ const HowItWorks = () => {
                   )}
                 >
                   <div className="flex flex-row md:flex-col items-start">
-                    <div className="flex items-center justify-center aspect-square w-12 rounded-full bg-blue-soft text-white font-bold leading-[1] text-center text-base md:text-lg z-20 mb-4 mr-4 md:mr-0">
-                      <span className="flex items-center justify-center">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-soft text-white font-bold leading-none text-center z-20 mb-4 mr-4 md:mr-0">
+                      <span className="flex items-center justify-center w-full h-full">
                         {step.number}
                       </span>
                     </div>
