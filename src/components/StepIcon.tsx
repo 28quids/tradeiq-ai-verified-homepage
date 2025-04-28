@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 
 const brokers = ["MetaTrader", "TradingView", "OANDA", "cTrader"];
@@ -27,16 +26,11 @@ const StepIcon = ({ type }: { type: string }) => {
             repeatCount="indefinite"
           />
         </circle>
-        
+
         {/* Orbiting nodes */}
         {[0, 60, 120, 180, 240, 300].map((angle, i) => (
           <g key={i} transform={`rotate(${angle}, 50, 50)`}>
-            <circle 
-              cx="50" 
-              cy="20" 
-              r="4" 
-              className="fill-blue-soft/60"
-            >
+            <circle cx="50" cy="20" r="4" className="fill-blue-soft/60">
               <animateTransform
                 attributeName="transform"
                 type="rotate"
@@ -46,14 +40,14 @@ const StepIcon = ({ type }: { type: string }) => {
                 repeatCount="indefinite"
               />
             </circle>
-            
+
             {/* Connection lines */}
-            <line 
-              x1="50" 
-              y1="28" 
-              x2="50" 
-              y2="42" 
-              className="stroke-blue-soft/30" 
+            <line
+              x1="50"
+              y1="28"
+              x2="50"
+              y2="42"
+              className="stroke-blue-soft/30"
               strokeWidth="1"
             >
               <animateTransform
@@ -67,9 +61,15 @@ const StepIcon = ({ type }: { type: string }) => {
             </line>
           </g>
         ))}
-        
+
         {/* Pulse effect */}
-        <circle cx="50" cy="50" r="20" className="fill-none stroke-blue-soft/20" strokeWidth="1">
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          className="fill-none stroke-blue-soft/20"
+          strokeWidth="1"
+        >
           <animate
             attributeName="r"
             values="20;35;20"
@@ -83,19 +83,19 @@ const StepIcon = ({ type }: { type: string }) => {
             repeatCount="indefinite"
           />
         </circle>
-        
+
         {/* Broker text */}
-        <text 
-          x="50" 
-          y="90" 
-          className="text-[8px] fill-blue-soft font-bold text-center transition-opacity duration-500 ease-in-out" 
+        <text
+          x="50"
+          y="90"
+          className="text-[8px] fill-blue-soft font-bold text-center transition-opacity duration-500 ease-in-out"
           textAnchor="middle"
           opacity={currentBroker === 0 ? "1" : "0"}
         >
           <animate
             attributeName="opacity"
             values="0;1;1;0"
-            dur="1.5s"
+            dur="1s"
             begin="0s"
             repeatCount="indefinite"
           />
@@ -109,7 +109,12 @@ const StepIcon = ({ type }: { type: string }) => {
   if (type === "profile") {
     return (
       <svg viewBox="0 0 100 100" className="w-full h-full">
-        <circle cx="50" cy="50" r="45" className="stroke-blue-soft/30 fill-none stroke-2" />
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          className="stroke-blue-soft/30 fill-none stroke-2"
+        />
         <path
           d="M50 5 A45 45 0 0 1 95 50"
           className="stroke-blue-soft fill-none stroke-2"
@@ -125,7 +130,10 @@ const StepIcon = ({ type }: { type: string }) => {
           />
         </path>
         <circle cx="50" cy="35" r="12" className="fill-blue-soft/50" />
-        <path d="M30 70 Q50 85 70 70" className="stroke-blue-soft fill-none stroke-2">
+        <path
+          d="M30 70 Q50 85 70 70"
+          className="stroke-blue-soft fill-none stroke-2"
+        >
           <animate
             attributeName="d"
             values="M30 70 Q50 85 70 70;M30 70 Q50 75 70 70;M30 70 Q50 85 70 70"
