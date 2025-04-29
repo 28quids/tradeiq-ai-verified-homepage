@@ -106,10 +106,8 @@ const HowItWorks = () => {
                   )}
                 >
                   <div className="flex flex-row md:flex-col items-start">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-soft text-white font-bold leading-none text-center z-20 mb-4 mr-4 md:mr-0">
-                      <span className="flex items-center justify-center w-full h-full">
-                        {step.number}
-                      </span>
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-soft text-white font-bold text-base leading-none font-mono overflow-hidden flex-shrink-0 z-20 mb-4 mr-4 md:mr-0">
+                      {String(index + 1).padStart(2, "0")}
                     </div>
 
                     <div>
@@ -128,7 +126,7 @@ const HowItWorks = () => {
                     "items-center justify-center",
                   )}
                 >
-                  <div className="glass-card p-5 h-[200px] w-full max-w-[300px] flex items-center justify-center relative overflow-hidden">
+                  <div className="glass-card p-5 w-full aspect-[3/1] max-w-[600px] md:max-w-[700px] flex items-center justify-center relative overflow-hidden">
                     <StepIcon type={step.icon} />
                   </div>
                 </div>
