@@ -24,7 +24,11 @@ const CtaSection = () => {
             <Button className="bg-blue-soft hover:bg-blue-electric text-white px-8 py-6 text-lg w-full sm:w-auto">
               Join Waitlist
             </Button>
-            <Button variant="outline" className="border-white/20 hover:bg-white/5 text-white px-8 py-6 text-lg w-full sm:w-auto">
+            <Button 
+              variant="outline" 
+              className="border-white/20 hover:bg-white/5 text-white px-8 py-6 text-lg w-full sm:w-auto"
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Explore Plans
             </Button>
           </div>

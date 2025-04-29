@@ -30,19 +30,19 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
 
         <div className="hidden md:flex items-center space-x-8">
           <div className="flex space-x-6">
-            <Link
-              to="/features"
-              className={`transition-colors ${isActive("/features") ? "text-white" : "text-white/80 hover:text-white"}`}
+            <button
+              onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+              className="transition-colors text-white/80 hover:text-white"
             >
               Features
-            </Link>
+            </button>
 
-            <Link
-              to="/plans"
-              className={`transition-colors ${isActive("/plans") ? "text-white" : "text-white/80 hover:text-white"}`}
+            <button
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              className="transition-colors text-white/80 hover:text-white"
             >
               Plans
-            </Link>
+            </button>
             <Link
               to="/about"
               className={`transition-colors ${isActive("/about") ? "text-white" : "text-white/80 hover:text-white"}`}
