@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 interface PriceData {
@@ -46,18 +45,32 @@ export const MarketTicker = () => {
 
   return (
     <div className="w-full bg-navy-darker/80 backdrop-blur border-t border-white/5">
-      <div className="overflow-hidden py-3">
-        <div className="whitespace-nowrap animate-ticker inline-block">
-          {Object.entries(priceData).map(([ticker, data]) => (
-            <span key={ticker} className="mx-4 text-sm">
-              {ticker.toUpperCase()}{" "}
-              <span className="font-mono">{data.price.toFixed(2)}</span>{" "}
-              <span className={`${data.isUp ? "text-green-500" : "text-red-500"}`}>
-                {data.isUp ? "+" : ""}{data.change}%
+      <div className="overflow-hidden py-3 relative">
+        <div className="flex whitespace-nowrap">
+          <div className="animate-ticker inline-flex items-center space-x-8 pr-8">
+            {Object.entries(priceData).map(([ticker, data]) => (
+              <span key={ticker} className="inline-flex items-center space-x-2">
+                <span className="uppercase">{ticker}</span>
+                <span className="font-mono">{data.price.toFixed(2)}</span>
+                <span className={`${data.isUp ? "text-green-500" : "text-red-500"}`}>
+                  {data.isUp ? "+" : ""}{data.change}%
+                </span>
+                <span className="text-gray-500">•</span>
               </span>
-              •
-            </span>
-          ))}
+            ))}
+          </div>
+          <div className="animate-ticker inline-flex items-center space-x-8 pr-8" aria-hidden="true">
+            {Object.entries(priceData).map(([ticker, data]) => (
+              <span key={ticker} className="inline-flex items-center space-x-2">
+                <span className="uppercase">{ticker}</span>
+                <span className="font-mono">{data.price.toFixed(2)}</span>
+                <span className={`${data.isUp ? "text-green-500" : "text-red-500"}`}>
+                  {data.isUp ? "+" : ""}{data.change}%
+                </span>
+                <span className="text-gray-500">•</span>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
