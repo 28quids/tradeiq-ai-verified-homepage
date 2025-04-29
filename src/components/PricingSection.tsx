@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -40,12 +39,15 @@ const PricingSelection = () => {
                 </li>
               ))}
             </ul>
-            <Button className="w-full bg-blue-soft hover:bg-blue-electric text-white py-6">
+            <Button 
+              className="w-full bg-blue-soft hover:bg-blue-electric text-white py-6"
+              onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Get Started
             </Button>
           </Card>
 
-          <Card className="glass-card p-8 border-blue-soft/30 animate-reveal animate-delay-400">
+          <Card className="glass-card p-8 animate-reveal animate-delay-400">
             <h3 className="text-2xl font-bold mb-4">Premium Plan</h3>
             <div className="text-3xl font-bold mb-6 text-blue-electric">
               $60 <span className="text-lg text-white/60">/month</span>
@@ -68,7 +70,10 @@ const PricingSelection = () => {
                 </li>
               ))}
             </ul>
-            <Button className="w-full bg-blue-electric hover:bg-blue-soft text-white py-6">
+            <Button 
+              className="w-full bg-blue-electric hover:bg-blue-soft text-white py-6"
+              onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Get Premium
             </Button>
           </Card>

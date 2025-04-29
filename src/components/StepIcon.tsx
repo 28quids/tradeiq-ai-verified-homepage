@@ -109,38 +109,56 @@ const StepIcon = ({ type }: { type: string }) => {
   if (type === "profile") {
     return (
       <svg viewBox="0 0 100 100" className="w-full h-full">
+        {/* Container circle */}
         <circle
           cx="50"
           cy="50"
           r="45"
           className="stroke-blue-soft/30 fill-none stroke-2"
         />
+
+        {/* Trading chart line */}
         <path
-          d="M50 5 A45 45 0 0 1 95 50"
+          d="M25 65 L40 45 L55 70 L75 35"
           className="stroke-blue-soft fill-none stroke-2"
           strokeLinecap="round"
-        >
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="0 50 50"
-            to="360 50 50"
-            dur="2s"
-            repeatCount="indefinite"
-          />
-        </path>
-        <circle cx="50" cy="35" r="12" className="fill-blue-soft/50" />
-        <path
-          d="M30 70 Q50 85 70 70"
-          className="stroke-blue-soft fill-none stroke-2"
+          strokeLinejoin="round"
         >
           <animate
-            attributeName="d"
-            values="M30 70 Q50 85 70 70;M30 70 Q50 75 70 70;M30 70 Q50 85 70 70"
+            attributeName="stroke-dasharray"
+            values="0,200;200,0"
             dur="2s"
             repeatCount="indefinite"
           />
         </path>
+
+        {/* AI Analysis circles */}
+        <g>
+          {[40, 55, 75].map((x, i) => (
+            <circle
+              key={i}
+              cx={x}
+              cy={i === 0 ? 45 : i === 1 ? 70 : 35}
+              r="4"
+              className="fill-none stroke-blue-soft stroke-2"
+            >
+              <animate
+                attributeName="r"
+                values="4;6;4"
+                dur="1s"
+                begin={`${i * 0.5}s`}
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="stroke-opacity"
+                values="1;0.3;1"
+                dur="1s"
+                begin={`${i * 0.5}s`}
+                repeatCount="indefinite"
+              />
+            </circle>
+          ))}
+        </g>
       </svg>
     );
   }

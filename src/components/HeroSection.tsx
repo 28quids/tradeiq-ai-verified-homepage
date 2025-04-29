@@ -30,12 +30,16 @@ const HeroSection = () => {
               emotions.
             </p>
             <div className="flex flex-wrap gap-4 animate-reveal animate-delay-300">
-              <Button className="bg-blue-soft hover:bg-blue-electric text-white px-6 py-6 text-lg">
+              <Button 
+                className="bg-blue-soft hover:bg-blue-electric text-white px-6 py-6 text-lg"
+                onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Join the Waitlist
               </Button>
               <Button
                 variant="outline"
                 className="border-white/20 hover:bg-white/5 text-white px-6 py-6 text-lg"
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
