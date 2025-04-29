@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <MarketTicker />
-      <footer className="py-12 bg-navy-dark border-t border-white/5 relative z-0">
+      <footer className="py-12 bg-navy-dark border-t border-white/5">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
