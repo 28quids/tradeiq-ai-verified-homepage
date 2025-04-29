@@ -31,24 +31,26 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
         <div className="hidden md:flex items-center space-x-8">
           <div className="flex space-x-6">
             <button
-              onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() =>
+                document
+                  .getElementById("how-it-works")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="transition-colors text-white/80 hover:text-white"
             >
               Features
             </button>
 
             <button
-              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() =>
+                document
+                  .getElementById("pricing")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="transition-colors text-white/80 hover:text-white"
             >
               Plans
             </button>
-            <Link
-              to="/about"
-              className={`transition-colors ${isActive("/about") ? "text-white" : "text-white/80 hover:text-white"}`}
-            >
-              About
-            </Link>
           </div>
 
           <div className="flex items-center space-x-2">
@@ -100,12 +102,6 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
             <Link
               to="/about"
               className={`transition-colors ${isActive("/about") ? "text-white" : "text-white/80"}`}
-            >
-              About
-            </Link>
-            <Link
-              to="/plans"
-              className={`transition-colors ${isActive("/plans") ? "text-white" : "text-white/80"}`}
             >
               Plans
             </Link>
