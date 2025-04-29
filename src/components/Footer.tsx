@@ -1,9 +1,13 @@
 import { FaInstagram, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
+import { MarketTicker } from "./MarketTicker";
+
 const Footer = () => {
   return (
-    <footer className="py-12 bg-navy-dark border-t border-white/5">
+    <>
+      <MarketTicker />
+      <footer className="py-12 bg-navy-dark border-t border-white/5">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
