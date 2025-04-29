@@ -1,15 +1,15 @@
-
 @keyframes ticker {
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
 .animate-ticker {
-  animation: ticker 25s linear infinite;
+  animation: ticker 30s linear infinite;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -112,41 +112,47 @@
 
   body.light {
 
-@keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(-5%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
+    @keyframes bounce-slow {
 
-.animate-bounce-slow {
-  animation: bounce-slow 2s infinite;
-}
+      0%,
+      100% {
+        transform: translateY(-5%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+      }
 
-@keyframes arrow-move {
-  0% {
-    left: 0;
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    left: 100%;
-    opacity: 0;
-  }
-}
+      50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
 
-.animate-arrow-move {
-  animation: arrow-move 2s infinite;
-}
+    .animate-bounce-slow {
+      animation: bounce-slow 2s infinite;
+    }
+
+    @keyframes arrow-move {
+      0% {
+        left: 0;
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        left: 100%;
+        opacity: 0;
+      }
+    }
+
+    .animate-arrow-move {
+      animation: arrow-move 2s infinite;
+    }
 
     @apply bg-[#F9FAFB] text-gray-900;
   }
