@@ -21,17 +21,17 @@ const stats = [
 
 const roadmapItems = [
   {
-    date: "Q1 2025",
+    date: "Q1+2 2025",
     title: "Alpha Testing",
     description: "Closed testing with select traders",
   },
   {
-    date: "Q2 2025",
+    date: "Q3 2025",
     title: "Beta Launch",
     description: "Early access for waitlist members",
   },
   {
-    date: "Q3+4 2025",
+    date: "Q4 2025",
     title: "Mobile App",
     description: "iOS and Android applications",
   },

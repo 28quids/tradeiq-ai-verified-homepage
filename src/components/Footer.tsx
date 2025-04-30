@@ -84,7 +84,7 @@ const Footer = () => {
               <FaInstagram className="w-6 h-6 text-white" />
             </a>
             <a
-              href="#"
+              href="https://discord.gg/3xYxKSpCaa"
               className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
               aria-label="Discord"
             >

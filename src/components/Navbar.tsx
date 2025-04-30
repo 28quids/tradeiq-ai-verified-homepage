@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { FaInstagram, FaDiscord } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,16 +56,48 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
       >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-            <Link 
-              to="/" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToTop();
-              }}
-              className="text-2xl font-bold text-white"
-            >
-              Trade<span className="bg-gradient-to-r from-blue-electric to-blue-soft bg-clip-text text-transparent">IQ</span>
-            </Link>
+            <div className="flex items-center space-x-6">
+              <Link 
+                to="/" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToTop();
+                }}
+                className="text-2xl font-bold text-white"
+              >
+                Trade<span className="bg-gradient-to-r from-blue-electric to-blue-soft bg-clip-text text-transparent">IQ</span>
+              </Link>
+              
+              <div className="hidden md:flex items-center space-x-4">
+                <a
+                  href="https://x.com/TradeIQ_App"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+                  aria-label="Twitter"
+                >
+                  <FaXTwitter className="w-4 h-4 text-white" />
+                </a>
+                <a
+                  href="https://www.instagram.com/tradeiq_app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="w-4 h-4 text-white" />
+                </a>
+                <a
+                  href="https://discord.gg/3xYxKSpCaa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+                  aria-label="Discord"
+                >
+                  <FaDiscord className="w-4 h-4 text-white" />
+                </a>
+              </div>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
@@ -224,6 +258,39 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
               >
                 Join Waitlist
               </button>
+
+              {/* Social Media Icons */}
+              <div className={`flex justify-center space-x-6 transition-all duration-300 transform ${
+                isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              } delay-[1400ms]`}>
+                <a
+                  href="https://x.com/TradeIQ_App"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+                  aria-label="Twitter"
+                >
+                  <FaXTwitter className="w-6 h-6 text-white" />
+                </a>
+                <a
+                  href="https://www.instagram.com/tradeiq_app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="w-6 h-6 text-white" />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full bg-white/5 hover:bg-white/10 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
+                  aria-label="Discord"
+                >
+                  <FaDiscord className="w-6 h-6 text-white" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
