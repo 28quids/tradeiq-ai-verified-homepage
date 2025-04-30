@@ -26,7 +26,7 @@ const roadmapItems = [
     description: "Closed testing with select traders",
   },
   {
-    date: "Q3 2025",
+    date: "Q2 2025",
     title: "Beta Launch",
     description: "Early access for waitlist members",
   },
