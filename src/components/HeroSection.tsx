@@ -25,7 +25,7 @@ const HeroSection = () => {
               <span className="gradient-text">Optimised by AI.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-lg animate-reveal animate-delay-200">
-              TradeIQ analyzes live markets and your personal trading style to
+              TradeIQ analyses live markets and your personal trading style to
               deliver smarter, faster decisions - Powered by real data, not
               emotions.
             </p>

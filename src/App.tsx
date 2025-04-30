@@ -9,6 +9,7 @@ import Features from "./pages/Features";
 import About from "./pages/About";
 import Plans from "./pages/Plans";
 import Waitlist from "./pages/Waitlist";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./components/ThemeProvider";
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="/waitlist" element={<Waitlist />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

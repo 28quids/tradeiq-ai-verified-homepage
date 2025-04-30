@@ -17,7 +17,7 @@ const signals = [
     asset: "XXX/USD",
     reason: "Lower time frame reversal -> Higher time frame continuation.",
     details:
-      "Fundamentals support continued upside for majors, with 1h timeframe signifying LTF reversal and continuation of HTF trend.soundo thes",
+      "Fundamentals support continued upside for majors, with 1h timeframe signifying LTF reversal and continuation of HTF trend.",
     chart: "breakout", // For simplified chart display
   },
   {
@@ -53,7 +53,7 @@ const SignalExamples = () => {
             Real-Time Signal Examples
           </h2>
           <p className="text-lg text-white/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
-            See how TradeIQ analyzes the market and provides verified trading
+            See how TradeIQ analyses the market and provides verified trading
             opportunities.
           </p>
         </div>

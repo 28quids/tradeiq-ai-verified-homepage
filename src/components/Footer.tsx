@@ -1,9 +1,24 @@
 import { FaInstagram, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import { MarketTicker } from "./MarketTicker";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSupportClick = () => {
+    window.location.href = "mailto:support@tradeiqapp.com";
+  };
+
+  const handleLoginClick = () => {
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 2000);
+  };
+
   return (
     <>
       <MarketTicker />
@@ -11,32 +26,45 @@ const Footer = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <a href="#" className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <span className="text-xl font-bold text-white">
                   Trade<span className="gradient-text">IQ</span>
                 </span>
-              </a>
+              </Link>
             </div>
 
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
-              <a
-                href="#"
+              <Link
+                to="/about"
+                className="text-white/70 hover:text-white transition-colors"
+              >
+                About
+              </Link>
+              <button
+                onClick={handleSupportClick}
                 className="text-white/70 hover:text-white transition-colors"
               >
                 Support
-              </a>
-              <a
-                href="#"
+              </button>
+              <Link
+                to="/privacy"
                 className="text-white/70 hover:text-white transition-colors"
               >
                 Privacy
-              </a>
-              <a
-                href="#"
-                className="text-white/70 hover:text-white transition-colors"
-              >
-                Login
-              </a>
+              </Link>
+              <div className="relative">
+                <button
+                  onClick={handleLoginClick}
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  Login
+                </button>
+                {showPopup && (
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
+                    Coming Soon!
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 

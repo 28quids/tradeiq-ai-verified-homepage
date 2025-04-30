@@ -44,7 +44,7 @@ const roadmapItems = [
     date: "Q2 2026",
     title: "Spot Investment",
     description:
-      "Targeted spot investment round to fuel TradeIQ’s growth and AI innovation.",
+      "New development on the platform to support spot investors as well as leveraged traders.",
   },
 ];
 

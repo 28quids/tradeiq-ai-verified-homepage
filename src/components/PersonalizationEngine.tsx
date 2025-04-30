@@ -36,7 +36,7 @@ const PersonalizationEngine = () => {
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
               TradeIQ adapts to your unique trading style, creating a
-              personalized experience that evolves over time.
+              personalised experience that evolves over time.
             </p>
           </div>
 
