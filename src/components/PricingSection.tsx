@@ -10,7 +10,7 @@ const PricingSelection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 animate-reveal">
             Simple, <span className="gradient-text">Transparent</span> Pricing
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
+          <p className="text-lg dark:text-white/70 light:text-navy/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
             Choose the plan that fits your trading needs. All plans include core
             features with premium options for advanced traders.
           </p>
@@ -20,7 +20,7 @@ const PricingSelection = () => {
           <Card className="glass-card p-8 animate-reveal animate-delay-300">
             <h3 className="text-2xl font-bold mb-4">Basic Plan</h3>
             <div className="text-3xl font-bold mb-6 text-blue-soft">
-              $30 <span className="text-lg text-white/60">/month</span>
+              $30 <span className="text-lg dark:dark:text-white/60 light:text-navy/60 light:text-navy/60">/month</span>
             </div>
             <ul className="space-y-3 mb-8">
               {[
@@ -34,13 +34,13 @@ const PricingSelection = () => {
                 "Psychological assessment",
                 "Custom strategy parameters",
               ].map((feature) => (
-                <li key={feature} className="flex items-center text-white/80">
+                <li key={feature} className="flex items-center dark:dark:text-white/80 light:text-navy/80 light:text-navy/80">
                   <span className="text-blue-soft mr-2">✓</span> {feature}
                 </li>
               ))}
             </ul>
             <Button 
-              className="w-full bg-blue-soft hover:bg-blue-electric text-white py-6"
+              className="w-full bg-blue-soft hover:bg-blue-electric dark:text-white light:text-navy py-6"
               onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get Started
@@ -50,7 +50,7 @@ const PricingSelection = () => {
           <Card className="glass-card p-8 animate-reveal animate-delay-400">
             <h3 className="text-2xl font-bold mb-4">Premium Plan</h3>
             <div className="text-3xl font-bold mb-6 text-blue-electric">
-              $60 <span className="text-lg text-white/60">/month</span>
+              $60 <span className="text-lg dark:dark:text-white/60 light:text-navy/60 light:text-navy/60">/month</span>
             </div>
             <ul className="space-y-3 mb-8">
               {[
@@ -65,13 +65,13 @@ const PricingSelection = () => {
                 "Custom alert thresholds",
                 "Weekly performance reports",
               ].map((feature) => (
-                <li key={feature} className="flex items-center text-white/80">
+                <li key={feature} className="flex items-center dark:dark:text-white/80 light:text-navy/80 light:text-navy/80">
                   <span className="text-blue-electric mr-2">✓</span> {feature}
                 </li>
               ))}
             </ul>
             <Button 
-              className="w-full bg-blue-electric hover:bg-blue-soft text-white py-6"
+              className="w-full bg-blue-electric hover:bg-blue-soft dark:text-white light:text-navy py-6"
               onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get Premium
@@ -80,7 +80,7 @@ const PricingSelection = () => {
         </div>
 
         <div className="text-center mt-12 animate-reveal animate-delay-500">
-          <p className="text-lg text-white/80">
+          <p className="text-lg dark:dark:text-white/80 light:text-navy/80 light:text-navy/80">
             💙🩵 First 500 users lock these prices for life 🩵💙
           </p>
         </div>

@@ -17,7 +17,7 @@ const CtaSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Join the Next Generation of <span className="gradient-text">Traders</span>
           </h2>
-          <p className="text-xl text-white/80 mb-8">
+          <p className="text-xl dark:text-white/80 light:text-navy/80 mb-8">
             Early users lock in lifetime pricing. Be among the first to experience verified AI trading.
           </p>
           <form
@@ -33,7 +33,7 @@ const CtaSection = () => {
               name="EMAIL"
               placeholder="Enter your email"
               required
-              className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-blue-soft"
+              className="dark:bg-white/5 light:bg-navy/5 dark:border-white/10 light:border-navy/10 dark:text-white light:text-navy placeholder:dark:text-white/50 light:text-navy/50 focus:border-blue-soft"
             />
             <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
               <input
@@ -43,20 +43,20 @@ const CtaSection = () => {
                 value=""
               />
             </div>
-            <Button type="submit" className="bg-blue-soft hover:bg-blue-electric text-white px-8 py-6 text-lg w-full">
+            <Button type="submit" className="bg-blue-soft hover:bg-blue-electric dark:text-white light:text-navy px-8 py-6 text-lg w-full">
               Join Waitlist
             </Button>
           </form>
           <div className="max-w-md mx-auto">
             <Button 
               variant="outline" 
-              className="border-white/20 hover:bg-white/5 text-white px-8 py-6 text-lg w-full mb-8"
+              className="dark:border-white/20 light:border-navy/20 hover:dark:bg-white/5 light:bg-navy/5 dark:text-white light:text-navy px-8 py-6 text-lg w-full mb-8"
               onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Explore Plans
             </Button>
           </div>
-          <p className="text-white/60 text-sm">100+ traders already registered</p>
+          <p className="dark:text-white/60 light:text-navy/60 text-sm">100+ traders already registered</p>
         </div>
       </div>
     </section>

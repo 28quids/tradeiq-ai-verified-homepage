@@ -52,7 +52,7 @@ const SignalExamples = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 animate-reveal">
             Real-Time Signal Examples
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
+          <p className="text-lg dark:text-white/70 light:text-navy/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
             See how TradeIQ analyses the market and provides verified trading
             opportunities.
           </p>
@@ -81,21 +81,21 @@ const SignalExamples = () => {
                     {signal.type === "buy" ? "✅ You Should Trade" : "❌ Avoid"}
                   </span>
                   <h3 className="text-xl font-bold">{signal.asset}</h3>
-                  <p className="text-white/70">{signal.reason}</p>
+                  <p className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">{signal.reason}</p>
                 </div>
 
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => toggleExpand(index)}
-                  className="text-white/50 hover:text-white hover:bg-white/5"
+                  className="dark:text-white/50 light:text-navy/50 hover:dark:text-white light:text-navy hover:dark:dark:bg-white/5 light:bg-navy/5 light:bg-navy/5"
                 >
                   {expandedSignal === index ? "Hide" : "Why?"}
                 </Button>
               </div>
 
               {/* Mini chart visualization */}
-              <div className="h-20 bg-navy-light rounded-md mb-3 p-2 flex items-center justify-center">
+              <div className="h-20 dark:bg-navy-light light:bg-gray-100 rounded-md mb-3 p-2 flex items-center justify-center">
                 {signal.chart === "up" && (
                   <svg width="200" height="40" viewBox="0 0 200 40">
                     <path
@@ -151,7 +151,7 @@ const SignalExamples = () => {
               {/* Expanded details */}
               {expandedSignal === index && (
                 <div className="mt-4 p-3 rounded bg-navy/50 text-sm animate-fade-in">
-                  <p className="text-white/80">{signal.details}</p>
+                  <p className="dark:dark:text-white/80 light:text-navy/80 light:text-navy/80">{signal.details}</p>
                 </div>
               )}
             </div>

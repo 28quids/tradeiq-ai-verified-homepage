@@ -2,11 +2,22 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
-const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToTop = () => {
     if (window.location.pathname !== '/') {
@@ -48,7 +59,7 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
       <nav
         className={`fixed w-full z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-navy/80 backdrop-blur-md py-4"
+            ? "dark:bg-navy/80 light:bg-white/80 backdrop-blur-md py-4"
             : "bg-transparent py-6"
         }`}
       >
@@ -60,7 +71,7 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
                 e.preventDefault();
                 scrollToTop();
               }}
-              className="text-2xl font-bold text-white"
+              className="text-2xl font-bold dark:text-white light:text-navy"
             >
               Trade<span className="bg-gradient-to-r from-blue-electric to-blue-soft bg-clip-text text-transparent">IQ</span>
             </Link>
@@ -69,35 +80,35 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
             <div className="hidden md:flex items-center space-x-8">
               <button
                 onClick={() => scrollToSection('personalization')}
-                className="text-white/80 hover:text-white transition-colors"
+                className="dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-colors"
               >
                 Features
               </button>
               <button
                 onClick={() => scrollToSection('pricing')}
-                className="text-white/80 hover:text-white transition-colors"
+                className="dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-colors"
               >
                 Plans
               </button>
               <button
                 onClick={() => scrollToSection('how-it-works')}
-                className="text-white/80 hover:text-white transition-colors"
+                className="dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-colors"
               >
                 How It Works
               </button>
               <Link
                 to="/about"
-                className="text-white/80 hover:text-white transition-colors"
+                className="dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-colors"
               >
                 About
               </Link>
               <button
                 onClick={handleLoginClick}
-                className="text-white/80 hover:text-white transition-colors px-4 py-2 rounded-lg border border-white/20 relative"
+                className="dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-colors px-4 py-2 rounded-lg dark:border-white/20 light:border-navy/20 border relative"
               >
                 Login
                 {showPopup && (
-                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 dark:bg-white/10 light:bg-navy/10 backdrop-blur-sm dark:text-white light:text-navy px-6 py-3 rounded-lg shadow-lg transition-all duration-300 ease-in-out">
                     Coming Soon!
                   </div>
                 )}
@@ -108,15 +119,19 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
               >
                 Join Waitlist
               </button>
+              <ThemeToggle />
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-white"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="md:hidden flex items-center space-x-4">
+              <ThemeToggle />
+              <button
+                className="dark:text-white light:text-navy"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -128,7 +143,7 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
         }`}
       >
         {/* Backdrop */}
-        <div className={`absolute inset-0 bg-navy/80 backdrop-blur-md transition-all duration-300 ${
+        <div className={`absolute inset-0 dark:bg-navy/80 light:bg-white/80 backdrop-blur-md transition-all duration-300 ${
           isOpen ? "opacity-100" : "opacity-0"
         }`} />
         
@@ -146,12 +161,12 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
                   scrollToTop();
                   setIsOpen(false);
                 }}
-                className="text-2xl font-bold text-white"
+                className="text-2xl font-bold dark:text-white light:text-navy"
               >
                 Trade<span className="bg-gradient-to-r from-blue-electric to-blue-soft bg-clip-text text-transparent">IQ</span>
               </Link>
               <button
-                className="text-white hover:text-white/80 transition-colors"
+                className="dark:text-white dark:hover:text-white/80 light:text-navy light:hover:text-navy/80 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 <X size={24} />
@@ -165,7 +180,7 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
                   scrollToSection('personalization');
                   setIsOpen(false);
                 }}
-                className={`text-white/80 hover:text-white transition-all duration-300 text-left py-3 transform ${
+                className={`dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-all duration-300 text-left py-3 transform ${
                   isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 } delay-[200ms]`}
               >
@@ -176,7 +191,7 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
                   scrollToSection('pricing');
                   setIsOpen(false);
                 }}
-                className={`text-white/80 hover:text-white transition-all duration-300 text-left py-3 transform ${
+                className={`dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-all duration-300 text-left py-3 transform ${
                   isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 } delay-[400ms]`}
               >
@@ -187,7 +202,7 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
                   scrollToSection('how-it-works');
                   setIsOpen(false);
                 }}
-                className={`text-white/80 hover:text-white transition-all duration-300 text-left py-3 transform ${
+                className={`dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-all duration-300 text-left py-3 transform ${
                   isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 } delay-[600ms]`}
               >
@@ -196,7 +211,7 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
               <Link
                 to="/about"
                 onClick={() => setIsOpen(false)}
-                className={`text-white/80 hover:text-white transition-all duration-300 text-left py-3 transform ${
+                className={`dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-all duration-300 text-left py-3 transform ${
                   isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 } delay-[800ms]`}
               >
@@ -207,7 +222,7 @@ const Navbar = ({ isScrolled }: { isScrolled: boolean }) => {
                   handleLoginClick();
                   setIsOpen(false);
                 }}
-                className={`text-white/80 hover:text-white transition-all duration-300 text-left py-3 transform ${
+                className={`dark:text-white/80 dark:hover:text-white light:text-navy/80 light:hover:text-navy transition-all duration-300 text-left py-3 transform ${
                   isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 } delay-[1000ms]`}
               >

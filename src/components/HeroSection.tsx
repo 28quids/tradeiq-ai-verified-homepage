@@ -24,21 +24,21 @@ const HeroSection = () => {
               Your Trading, <br />
               <span className="gradient-text">Optimised by AI.</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-lg animate-reveal animate-delay-200">
+            <p className="text-lg md:text-xl dark:text-white/80 light:text-navy/80 mb-8 max-w-lg animate-reveal animate-delay-200">
               TradeIQ analyses live markets and your personal trading style to
               deliver smarter, faster decisions - Powered by real data, not
               emotions.
             </p>
             <div className="flex flex-wrap gap-4 animate-reveal animate-delay-300">
               <Button 
-                className="bg-blue-soft hover:bg-blue-electric text-white px-6 py-6 text-lg"
+                className="bg-blue-soft hover:bg-blue-electric dark:text-white light:text-navy px-6 py-6 text-lg"
                 onClick={() => document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Join the Waitlist
               </Button>
               <Button
                 variant="outline"
-                className="border-white/20 hover:bg-white/5 text-white px-6 py-6 text-lg"
+                className="dark:border-white/20 light:border-navy/20 hover:dark:bg-white/5 light:bg-navy/5 dark:text-white light:text-navy px-6 py-6 text-lg"
                 onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See How It Works <ChevronRight className="ml-2 h-4 w-4" />
@@ -51,37 +51,37 @@ const HeroSection = () => {
               <div className="space-y-8">
                 {/* Trading Score Section */}
                 <div>
-                  <h2 className="text-2xl font-semibold text-white mb-4">
+                  <h2 className="text-2xl font-semibold dark:text-white light:text-navy mb-4">
                     Trading Score
                   </h2>
-                  <p className="text-white/60 mb-4">Session Analysis</p>
+                  <p className="dark:text-white/60 light:text-navy/60 mb-4">Session Analysis</p>
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/5 rounded-lg p-4 flex flex-col items-center justify-center text-center h-full">
-                      <span className="text-white/80 text-sm md:text-base mb-2">
+                    <div className="dark:bg-white/5 light:bg-navy/5 rounded-lg p-4 flex flex-col items-center justify-center text-center h-full">
+                      <span className="dark:text-white/80 light:text-navy/80 text-sm md:text-base mb-2">
                         Entry Precision
                       </span>
                       <span className="text-cyan-400 font-bold text-xl md:text-2xl">
                         94%
                       </span>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4 flex flex-col items-center justify-center text-center h-full">
-                      <span className="text-white/80 text-sm md:text-base mb-2">
+                    <div className="dark:bg-white/5 light:bg-navy/5 rounded-lg p-4 flex flex-col items-center justify-center text-center h-full">
+                      <span className="dark:text-white/80 light:text-navy/80 text-sm md:text-base mb-2">
                         Risk Management
                       </span>
                       <span className="text-amber-400 font-bold text-xl md:text-2xl">
                         61%
                       </span>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4 flex flex-col items-center justify-center text-center h-full">
-                      <span className="text-white/80 text-sm md:text-base mb-2">
+                    <div className="dark:bg-white/5 light:bg-navy/5 rounded-lg p-4 flex flex-col items-center justify-center text-center h-full">
+                      <span className="dark:text-white/80 light:text-navy/80 text-sm md:text-base mb-2">
                         Rule Following
                       </span>
                       <span className="text-green-400 font-bold text-xl md:text-2xl">
                         82%
                       </span>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4 flex flex-col items-center justify-center text-center h-full">
-                      <span className="text-white/80 text-sm md:text-base mb-2">
+                    <div className="dark:bg-white/5 light:bg-navy/5 rounded-lg p-4 flex flex-col items-center justify-center text-center h-full">
+                      <span className="dark:text-white/80 light:text-navy/80 text-sm md:text-base mb-2">
                         Emotional State
                       </span>
                       <span className="text-amber-400 font-bold text-xl md:text-2xl">
@@ -93,16 +93,16 @@ const HeroSection = () => {
 
                 {/* AI Recommendations Section */}
                 <div>
-                  <h2 className="text-2xl font-semibold text-white mb-4">
+                  <h2 className="text-2xl font-semibold dark:text-white light:text-navy mb-4">
                     AI Recommendations
                   </h2>
-                  <p className="text-white/60 mb-4">
+                  <p className="dark:text-white/60 light:text-navy/60 mb-4">
                     Personalized trade alerts
                   </p>
                   <div className="space-y-4">
-                    <div className="bg-white/5 rounded-lg p-4">
+                    <div className="dark:bg-white/5 light:bg-navy/5 rounded-lg p-4">
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-white font-semibold">
+                        <span className="dark:text-white light:text-navy font-semibold">
                           NASDAQ: Short Setup
                         </span>
                         <span className="bg-cyan-400/20 text-cyan-400 px-2 py-1 rounded text-sm">
@@ -113,24 +113,24 @@ const HeroSection = () => {
                         Showing same patterns as your last 3 losing NQ trades
                       </p>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4">
+                    <div className="dark:bg-white/5 light:bg-navy/5 rounded-lg p-4">
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-white font-semibold">
+                        <span className="dark:text-white light:text-navy font-semibold">
                           EUR/JPY: Buy Zone
                         </span>
                       </div>
-                      <p className="text-white/60 text-sm">
+                      <p className="dark:text-white/60 light:text-navy/60 text-sm">
                         4/5 of your strategy confluences met
                       </p>
                     </div>
-                    <div className="bg-white/5 rounded-lg p-4">
+                    <div className="dark:bg-white/5 light:bg-navy/5 rounded-lg p-4">
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-white font-semibold">
+                        <span className="dark:text-white light:text-navy font-semibold">
                           Gold (XAU/USD): Exit Signal
                         </span>
                         <span className="text-amber-400 text-xl">⚠️</span>
                       </div>
-                      <p className="text-white/60 text-sm">
+                      <p className="dark:text-white/60 light:text-navy/60 text-sm">
                         Your TP conditions are met - take partials here and move
                         SL to breakeven
                       </p>

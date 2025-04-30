@@ -44,7 +44,7 @@ export const MarketTicker = () => {
   }, [priceData]);
 
   return (
-    <div className="w-full bg-navy-darker/80 backdrop-blur border-t border-white/5">
+    <div className="w-full bg-navy-darker/80 backdrop-blur border-t dark:dark:border-white/5 light:border-navy/5 light:border-navy/5">
       <div className="overflow-hidden py-3 relative">
         <div className="flex whitespace-nowrap">
           <div className="animate-ticker inline-flex items-center space-x-8 pr-8">

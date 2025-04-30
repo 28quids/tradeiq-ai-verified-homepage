@@ -48,7 +48,7 @@ const BenefitsSection = () => {
             Built to Make You a{" "}
             <span className="gradient-text">Better Trader</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
+          <p className="text-lg dark:text-white/70 light:text-navy/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
             Systematically improve your trading performance with AI-powered
             insights.
           </p>
@@ -65,7 +65,7 @@ const BenefitsSection = () => {
             >
               <div className="text-4xl mb-4">{benefit.icon}</div>
               <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-              <p className="text-white/70">{benefit.description}</p>
+              <p className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">{benefit.description}</p>
             </div>
           ))}
         </div>

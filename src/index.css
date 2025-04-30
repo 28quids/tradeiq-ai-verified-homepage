@@ -21,41 +21,41 @@
 @layer base {
   :root {
     /* Light theme */
-    --background: 210 40% 98%;
-    /* #F9FAFB */
-    --foreground: 222 47% 11%;
-    /* #111827 */
+    --background: 215 30% 95%;
+    /* #EDF1F7 - Light blue-gray */
+    --foreground: 220 33% 15%;
+    /* #1E2A45 - Dark navy */
 
     --card: 0 0% 100%;
     /* #FFFFFF */
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 220 33% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 220 33% 15%;
 
-    --primary: 221 83% 53%;
-    /* #2563EB */
+    --primary: 215 80% 40%;
+    /* #1A56DB - Navy blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 98%;
-    --secondary-foreground: 221 83% 53%;
+    --secondary: 215 30% 95%;
+    --secondary-foreground: 215 80% 40%;
 
-    --muted: 220 14% 96%;
-    /* #F3F4F6 */
-    --muted-foreground: 220 9% 46%;
-    /* #6B7280 */
+    --muted: 215 25% 90%;
+    /* #E2E8F0 - Light blue-gray */
+    --muted-foreground: 215 25% 40%;
+    /* #64748B - Medium blue-gray */
 
     --accent: 199 89% 48%;
-    /* #0ADBFF */
-    --accent-foreground: 222 47% 11%;
+    /* #0ADBFF - Electric blue */
+    --accent-foreground: 220 33% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    /* #E5E7EB */
-    --input: 220 13% 91%;
-    --ring: 221 83% 53%;
+    --border: 215 25% 85%;
+    /* #CBD5E1 - Light blue-gray border */
+    --input: 215 25% 85%;
+    --ring: 215 80% 40%;
 
     --radius: 0.5rem;
   }
@@ -111,9 +111,9 @@
   }
 
   body.light {
+    @apply bg-[#EDF1F7] text-[#1E2A45];
 
     @keyframes bounce-slow {
-
       0%,
       100% {
         transform: translateY(-5%);
@@ -153,36 +153,34 @@
     .animate-arrow-move {
       animation: arrow-move 2s infinite;
     }
-
-    @apply bg-[#F9FAFB] text-gray-900;
   }
 
   .light .card {
-    @apply bg-white border-[#E5E7EB] shadow-sm hover:shadow-md transition-all duration-200;
+    @apply bg-white border-[#CBD5E1] shadow-sm hover:shadow-md transition-all duration-200;
   }
 
   .light .glass-card {
-    @apply bg-white/90 border-[#E5E7EB] backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-200;
+    @apply bg-white/90 border-[#CBD5E1] backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-200;
   }
 
   .light .btn-primary {
-    @apply bg-[#2563EB] text-white hover:bg-[#1D4ED8] transition-colors duration-200;
+    @apply bg-[#1A56DB] text-white hover:bg-[#1E429F] transition-colors duration-200;
   }
 
   .light .btn-secondary {
-    @apply bg-transparent text-[#2563EB] border-[#2563EB] hover:bg-[#2563EB]/5 transition-colors duration-200;
+    @apply bg-transparent text-[#1A56DB] border-[#1A56DB] hover:bg-[#1A56DB]/5 transition-colors duration-200;
   }
 
   .light .navbar {
-    @apply bg-white border-b border-[#E5E7EB] shadow-sm;
+    @apply bg-white border-b border-[#CBD5E1] shadow-sm;
   }
 
   .light .cta-section {
-    @apply bg-[#F3F4F6] text-gray-900;
+    @apply bg-[#E2E8F0] text-[#1E2A45];
   }
 
   .light .signal-card {
-    @apply bg-white border-[#E5E7EB] shadow-sm;
+    @apply bg-white border-[#CBD5E1] shadow-sm;
   }
 
   .light .signal-buy {
@@ -194,11 +192,11 @@
   }
 
   .light a:not(.btn-primary):not(.btn-secondary) {
-    @apply text-[#2563EB] hover:text-[#1D4ED8] transition-colors duration-200;
+    @apply text-[#1A56DB] hover:text-[#1E429F] transition-colors duration-200;
   }
 
   .light .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-blue-500;
+    @apply bg-gradient-to-r from-[#0284C7] to-[#0EA5E9];
   }
 
   .light a:not(.gradient-text),
@@ -211,7 +209,7 @@
   .light h5,
   .light h6,
   .light span:not(.gradient-text) {
-    @apply text-gray-900;
+    @apply text-[#1E2A45];
   }
 
   .light nav a,
@@ -267,7 +265,7 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl dark:bg-white/5 dark:border-white/10 bg-navy-5;
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl dark:bg-white/5 dark:border-white/10 light:bg-navy/5 light:border-navy/10;
   }
 }
 
@@ -282,7 +280,6 @@
 }
 
 @keyframes pulse-slow {
-
   0%,
   100% {
     transform: scale(1);

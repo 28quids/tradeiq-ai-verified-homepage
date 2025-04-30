@@ -77,7 +77,7 @@ const HowItWorks = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 animate-reveal">
             How <span className="gradient-text">TradeIQ</span> Works
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
+          <p className="text-lg dark:text-white/70 light:text-navy/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
             Our AI-powered platform follows a systematic approach to help you
             make informed trading decisions.
           </p>
@@ -85,7 +85,7 @@ const HowItWorks = () => {
 
         <div className="relative">
           {/* Vertical line connecting steps */}
-          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-px bg-white/10 transform md:translate-x-px z-0"></div>
+          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-px dark:bg-white/10 light:bg-navy/10 transform md:translate-x-px z-0"></div>
 
           <div className="space-y-20 md:space-y-32 relative z-10">
             {steps.map((step, index) => (
@@ -106,7 +106,7 @@ const HowItWorks = () => {
                   )}
                 >
                   <div className="flex flex-row md:flex-col items-start">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-soft text-white font-bold text-base leading-none font-mono overflow-hidden flex-shrink-0 z-20 mb-4 mr-4 md:mr-0">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-soft dark:text-white light:text-navy font-bold text-base leading-none font-mono overflow-hidden flex-shrink-0 z-20 mb-4 mr-4 md:mr-0">
                       {String(index + 1).padStart(2, "0")}
                     </div>
 
@@ -114,7 +114,7 @@ const HowItWorks = () => {
                       <h3 className="text-xl md:text-2xl font-bold mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-white/70">{step.description}</p>
+                      <p className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">{step.description}</p>
                     </div>
                   </div>
                 </div>

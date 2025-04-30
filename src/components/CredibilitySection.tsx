@@ -57,7 +57,7 @@ const CredibilitySection = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 animate-reveal">
               Trusted by <span className="gradient-text">Smart Traders</span>
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
+            <p className="text-lg dark:text-white/70 light:text-navy/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
               Join a growing community of traders who rely on data-driven
               decisions.
             </p>
@@ -76,20 +76,20 @@ const CredibilitySection = () => {
                 <h3 className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.value}
                 </h3>
-                <p className="text-white/70">{stat.label}</p>
+                <p className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">{stat.label}</p>
               </div>
             ))}
           </div>
 
           {/* Roadmap */}
-          <div className="bg-navy-light rounded-xl p-8 animate-reveal animate-delay-300">
+          <div className="dark:bg-navy-light light:bg-gray-100 rounded-xl p-8 animate-reveal animate-delay-300">
             <h3 className="text-2xl font-bold mb-8 text-center">
               Development Roadmap
             </h3>
 
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-0 md:left-1/2 top-0 h-full w-px bg-white/10 transform md:translate-x-px"></div>
+              <div className="absolute left-0 md:left-1/2 top-0 h-full w-px dark:bg-white/10 light:bg-navy/10 transform md:translate-x-px"></div>
 
               <div className="space-y-12">
                 {roadmapItems.map((item, index) => (
@@ -111,7 +111,7 @@ const CredibilitySection = () => {
                           {item.date}
                         </span>
                         <h4 className="text-xl font-bold">{item.title}</h4>
-                        <p className="text-white/70">{item.description}</p>
+                        <p className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">{item.description}</p>
                       </div>
                     </div>
 

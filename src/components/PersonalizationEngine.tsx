@@ -34,7 +34,7 @@ const PersonalizationEngine = () => {
               <span className="gradient-text">AI</span> That Learns How You
               Trade
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
+            <p className="text-lg dark:text-white/70 light:text-navy/70 max-w-2xl mx-auto animate-reveal animate-delay-200">
               TradeIQ adapts to your unique trading style, creating a
               personalised experience that evolves over time.
             </p>
@@ -57,8 +57,8 @@ const PersonalizationEngine = () => {
 
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-3 rounded-lg bg-navy-dark">
-                    <span className="text-white/70">Entry Precision</span>
-                    <div className="w-32 h-2 bg-white/10 rounded-full overflow-hidden">
+                    <span className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">Entry Precision</span>
+                    <div className="w-32 h-2 dark:bg-white/10 light:bg-navy/10 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-blue-soft rounded-full"
                         style={{ width: "65%" }}
@@ -67,8 +67,8 @@ const PersonalizationEngine = () => {
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-lg bg-navy-dark">
-                    <span className="text-white/70">Strategy Adherence</span>
-                    <div className="w-32 h-2 bg-white/10 rounded-full overflow-hidden">
+                    <span className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">Strategy Adherence</span>
+                    <div className="w-32 h-2 dark:bg-white/10 light:bg-navy/10 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-blue-soft rounded-full"
                         style={{ width: "80%" }}
@@ -77,8 +77,8 @@ const PersonalizationEngine = () => {
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-lg bg-navy-dark">
-                    <span className="text-white/70">Impulse Control</span>
-                    <div className="w-32 h-2 bg-white/10 rounded-full overflow-hidden">
+                    <span className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">Impulse Control</span>
+                    <div className="w-32 h-2 dark:bg-white/10 light:bg-navy/10 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-blue-soft rounded-full"
                         style={{ width: "30%" }}
@@ -87,19 +87,19 @@ const PersonalizationEngine = () => {
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-lg bg-navy-dark">
-                    <span className="text-white/70">Average Hold Time</span>
-                    <span className="text-white text-right">
+                    <span className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">Average Hold Time</span>
+                    <span className="dark:text-white light:text-navy text-right">
                       2.4 days
                       <br />
-                      <span className="text-xs text-white/50">
+                      <span className="text-xs dark:dark:text-white/50 light:text-navy/50 light:text-navy/50">
                         Intraday-Swing
                       </span>
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-lg bg-navy-dark">
-                    <span className="text-white/70">Favorite Pairs</span>
-                    <span className="text-white">XAU/USD, Nas100</span>
+                    <span className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">Favorite Pairs</span>
+                    <span className="dark:dark:text-white light:text-navy light:text-navy">XAU/USD, Nas100</span>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ const PersonalizationEngine = () => {
                     <div className="mr-4 text-3xl">{item.icon}</div>
                     <div>
                       <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-white/70">{item.description}</p>
+                      <p className="dark:dark:text-white/70 light:text-navy/70 light:text-navy/70">{item.description}</p>
                     </div>
                   </div>
                 ))}
