@@ -111,9 +111,9 @@
   }
 
   body.light {
+    @apply bg-white text-navy;
 
     @keyframes bounce-slow {
-
       0%,
       100% {
         transform: translateY(-5%);
@@ -153,36 +153,34 @@
     .animate-arrow-move {
       animation: arrow-move 2s infinite;
     }
-
-    @apply bg-[#F9FAFB] text-gray-900;
   }
 
   .light .card {
-    @apply bg-white border-[#E5E7EB] shadow-sm hover:shadow-md transition-all duration-200;
+    @apply bg-white border-navy/10 shadow-sm hover:shadow-md transition-all duration-200;
   }
 
   .light .glass-card {
-    @apply bg-white/90 border-[#E5E7EB] backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-200;
+    @apply bg-white/90 border-navy/10 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-200;
   }
 
   .light .btn-primary {
-    @apply bg-[#2563EB] text-white hover:bg-[#1D4ED8] transition-colors duration-200;
+    @apply bg-blue-soft text-white hover:bg-blue-electric transition-colors duration-200;
   }
 
   .light .btn-secondary {
-    @apply bg-transparent text-[#2563EB] border-[#2563EB] hover:bg-[#2563EB]/5 transition-colors duration-200;
+    @apply bg-transparent text-blue-soft border-blue-soft hover:bg-blue-soft/5 transition-colors duration-200;
   }
 
   .light .navbar {
-    @apply bg-white border-b border-[#E5E7EB] shadow-sm;
+    @apply bg-white/80 backdrop-blur-md border-b border-navy/10 shadow-sm;
   }
 
   .light .cta-section {
-    @apply bg-[#F3F4F6] text-gray-900;
+    @apply bg-gray-100 text-navy;
   }
 
   .light .signal-card {
-    @apply bg-white border-[#E5E7EB] shadow-sm;
+    @apply bg-white border-navy/10 shadow-sm;
   }
 
   .light .signal-buy {
@@ -194,11 +192,11 @@
   }
 
   .light a:not(.btn-primary):not(.btn-secondary) {
-    @apply text-[#2563EB] hover:text-[#1D4ED8] transition-colors duration-200;
+    @apply text-blue-soft hover:text-blue-electric transition-colors duration-200;
   }
 
   .light .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-blue-500;
+    @apply bg-gradient-to-r from-blue-soft to-blue-electric;
   }
 
   .light a:not(.gradient-text),
@@ -211,12 +209,12 @@
   .light h5,
   .light h6,
   .light span:not(.gradient-text) {
-    @apply text-gray-900;
+    @apply text-navy;
   }
 
   .light nav a,
   .light nav button {
-    @apply text-navy hover:text-navy-light;
+    @apply text-navy hover:text-blue-soft;
   }
 
   .container {
@@ -267,7 +265,7 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl dark:bg-white/5 dark:border-white/10 bg-navy-5;
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl dark:bg-white/5 dark:border-white/10 light:bg-navy/5 light:border-navy/10;
   }
 }
 
@@ -282,7 +280,6 @@
 }
 
 @keyframes pulse-slow {
-
   0%,
   100% {
     transform: scale(1);
